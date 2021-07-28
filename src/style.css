@@ -1,15 +1,37 @@
-h1 {
-  color: purple;
-}
-
 ul {
   list-style-type: none;
 }
 
-.unit {
-  font-size: 15px;
-}
-.container {
+/* .container  {
   max-width: 400px;
   padding: 40px;
+} */
+
+.card {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.main-temp {
+  text-align: center;
+  color: purple;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 20px;
+  color: black;
+}
+
+.city {
+  font-weight: bold;
+  color: brown;
+}
+.credit {
+  text-align: center;
+  display: block;
 }
