@@ -28,8 +28,6 @@ let time = document.querySelector("#time");
 time.innerHTML = `${currentHour}:${currentMinute}`;
 
 function displayTemperature(response) {
-  console.log(response.data);
-
   let temperatureElement = document.querySelector("#main-temp-value");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -44,12 +42,18 @@ function displayTemperature(response) {
 
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let currentCity = "Brighton"; //`${searchInput.value}`;
+let currentCity = "north pole"; //`${searchInput.value}`;
 let units = "metric";
 let apiKey = "e4c991b27b566dc4b5b311b6f8d9ac5c";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=${units}`;
-console.log(apiUrl);
 
 axios.get(apiUrl).then(displayTemperature);
