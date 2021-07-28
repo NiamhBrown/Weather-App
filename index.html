@@ -18,24 +18,23 @@
     <div class="container"></div>
     <div class="card">
       <div class="main-temp">
-        <span
-          ><span class="main-temp-value" id="main-temp-value">100</span>
-          <span class="unit">C | F</span></span
-        >
+        <strong class="main-temp-value" id="main-temp-value"></strong>
+        <span class="unit">C | F</span>
       </div>
+
       <div class="row">
         <div class="col-6">
           <ul>
-            <li><span class="city">Brighton</span></li>
+            <li><span class="city" id="city"></span></li>
             <li>Friday</li>
             <li>04:30</li>
           </ul>
         </div>
         <div class="col-6">
           <ul>
-            <li>Clear Sky</li>
-            <li>Humidity: 7%</li>
-            <li>Wind</li>
+            <li id="description">Clear Sky</li>
+            <li>Humidity: <span id="humidity"></span>%</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
           </ul>
         </div>
       </div>
