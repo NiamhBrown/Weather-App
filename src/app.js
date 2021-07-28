@@ -1,3 +1,32 @@
+let currentDate = new Date();
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let currentDay = days[currentDate.getDay()];
+let day = document.querySelector("#day");
+day.innerHTML = currentDay;
+
+let currentHour = currentDate.getHours();
+let currentMinute = currentDate.getMinutes();
+
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
+if (currentMinute < 10) {
+  currentMinute = `0${currentMinute}`;
+}
+
+let time = document.querySelector("#time");
+time.innerHTML = `${currentHour}:${currentMinute}`;
+
 function displayTemperature(response) {
   console.log(response.data);
 
