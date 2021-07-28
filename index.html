@@ -11,13 +11,18 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container"></div>
     <div class="card">
-      <span class="main-temp">22<sup class="unit">C | F</sup></span>
-
+      <div class="main-temp">
+        <span
+          ><span class="main-temp-value" id="main-temp-value">100</span>
+          <span class="unit">C | F</span></span
+        >
+      </div>
       <div class="row">
         <div class="col-6">
           <ul>
