@@ -1,3 +1,15 @@
-h1{
-    color:pink;
+h1 {
+  color: purple;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.unit {
+  font-size: 15px;
+}
+.container {
+  max-width: 400px;
+  padding: 40px;
 }
