@@ -17,6 +17,22 @@
   <body>
     <div class="container"></div>
     <div class="card">
+      <form id="search-form" class="mb-3">
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              placeholder="City"
+              class="form-control"
+              id="search-input"
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" value="📍" class="btn btn-primary w-100" />
+          </div>
+        </div>
+      </form>
       <div class="main-temp">
         <strong class="main-temp-value" id="main-temp-value"></strong>
         <span class="unit">C | F</span>

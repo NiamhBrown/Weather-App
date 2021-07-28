@@ -16,7 +16,6 @@ ul:first-letter {
   max-width: 400px;
   margin: 30px auto;
   padding: 20px;
-  border: 1px solid palevioletred;
   border-radius: 20px;
   background-image: url(https://condescending-brown-9875c9.netlify.app/imgs/background3.png);
 }
@@ -37,7 +36,6 @@ ul:first-letter {
 
 .city {
   font-weight: bold;
-  color: brown;
 }
 .credit {
   text-align: center;
