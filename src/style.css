@@ -28,6 +28,12 @@ ul:first-letter {
   font-weight: bold;
 }
 
+.main-temp .active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
 .unit {
   position: relative;
   font-size: 20px;
