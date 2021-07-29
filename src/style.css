@@ -36,8 +36,14 @@ ul:first-letter {
   left: -15px;
   text-decoration: none;
 }
-.btn-primary {
-  background-color: blueviolet;
+.location-button {
+  padding: 5px;
+  border-radius: 6px;
+  background-color: #db9bd0;
+  width: 100%;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
 }
 
 .city {
