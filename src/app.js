@@ -62,6 +62,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
   search(searchInputElement.value);
+  console.log(searchInputElement.value);
 }
 
 let form = document.querySelector("#search-form");
