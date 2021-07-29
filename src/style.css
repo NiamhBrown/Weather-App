@@ -13,6 +13,7 @@ ul:first-letter {
   padding: 20px;
   border-radius: 20px;
   background-image: url(https://i.pinimg.com/originals/fa/2f/09/fa2f0902fbc859459ac839c1eb2ea175.png);
+  margin-bottom: 0px;
 }
 
 .main-temp {
@@ -23,10 +24,10 @@ ul:first-letter {
   font-weight: bold;
 }
 
-.main-temp .active {
-  color: black;
-  text-decoration: none;
+.unit .active {
   cursor: default;
+  background-color: yellow;
+  text-decoration-line: underline;
 }
 
 .unit {
@@ -34,7 +35,6 @@ ul:first-letter {
   font-size: 15px;
   top: -32px;
   left: -15px;
-  text-decoration: none;
 }
 .location-button {
   padding: 5px;
