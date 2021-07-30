@@ -8,7 +8,7 @@ ul:first-letter {
 }
 
 .card {
-  max-width: 355px;
+  max-width: 370px;
   margin: 40px auto 10px;
   padding: 20px;
   border-radius: 20px;
@@ -73,6 +73,10 @@ ul:first-letter {
 }
 .weather-foreacast-temperature-min {
   opacity: 0.5;
+}
+
+.daily-affirmation {
+  padding-top: 15px;
 }
 
 #icon {
