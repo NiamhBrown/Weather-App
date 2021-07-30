@@ -8,33 +8,37 @@ ul:first-letter {
 }
 
 .card {
-  max-width: 400px;
-  margin: 30px auto;
+  max-width: 350px;
+  margin: 40px auto 10px;
   padding: 20px;
   border-radius: 20px;
   background-image: url(https://i.pinimg.com/originals/fa/2f/09/fa2f0902fbc859459ac839c1eb2ea175.png);
   margin-bottom: 0px;
 }
 
+.main-info-left {
+  padding-left: 0px;
+}
+.main-info-right {
+  text-align: right;
+}
 .main-temp {
   text-align: center;
+  position: relative;
+  left: 15px;
   display: block;
   color: black;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.unit .active {
-  cursor: default;
-  background-color: yellow;
-  text-decoration-line: underline;
+  font-size: 60px;
+  font-weight: 500;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .unit {
   position: relative;
   font-size: 15px;
   top: -32px;
-  left: -15px;
+  left: -13px;
 }
 .location-button {
   padding: 5px;
@@ -45,13 +49,27 @@ ul:first-letter {
   border-color: white;
   border-width: 2px;
 }
-
+.main-info {
+  font-size: 13px;
+}
 .city {
   font-weight: bold;
 }
 .credit {
   text-align: center;
   display: block;
+}
+.weather-forcast {
+  font-size: 12px;
+  text-align: center;
+  background: rgba(236, 221, 234, 0.7);
+
+  width: 100vw;
+  position: relative;
+}
+
+.weather-foracast-temperature-min {
+  opacity: 0.5;
 }
 
 #icon {
@@ -64,4 +82,9 @@ ul:first-letter {
 #celsius-link {
   text-decoration: none;
   color: black;
+}
+#fahrenheit-link.active,
+#celsius-link.active {
+  cursor: default;
+  text-decoration: underline;
 }
