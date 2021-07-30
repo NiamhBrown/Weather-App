@@ -27,6 +27,34 @@ if (currentMinute < 10) {
 let time = document.querySelector("#time");
 time.innerHTML = `${currentHour}:${currentMinute}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <div class="weather-forecast-day">${day}</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt=""
+                width="42"
+                class="weather-forecast-icon"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-foreacast-temperature-max"> 18° </span>
+                <span class="weather-foreacast-temperature-min"> 15° </span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#main-temp-value");
   let cityElement = document.querySelector("#city");
@@ -90,3 +118,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Brighton");
+displayForecast();
