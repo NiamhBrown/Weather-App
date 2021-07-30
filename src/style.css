@@ -8,7 +8,7 @@ ul:first-letter {
 }
 
 .card {
-  max-width: 350px;
+  max-width: 355px;
   margin: 40px auto 10px;
   padding: 20px;
   border-radius: 20px;
@@ -59,7 +59,7 @@ ul:first-letter {
   text-align: center;
   display: block;
 }
-.weather-forcast {
+.weather-forecast {
   font-size: 12px;
   text-align: center;
   background: rgba(236, 221, 234, 0.7);
@@ -68,7 +68,10 @@ ul:first-letter {
   position: relative;
 }
 
-.weather-foracast-temperature-min {
+.weather-forecast-temperatures {
+  font-size: 10px;
+}
+.weather-foreacast-temperature-min {
   opacity: 0.5;
 }
 
@@ -86,5 +89,5 @@ ul:first-letter {
 #fahrenheit-link.active,
 #celsius-link.active {
   cursor: default;
-  text-decoration: underline;
+  font-weight: bolder;
 }
