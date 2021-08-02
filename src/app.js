@@ -35,8 +35,19 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-//function displayAffirmation() {
-
+function displayAffirmation() {
+  let affirmation = [
+    "Just because it is not happening right now, does not mean it never will.",
+    "The best things in life are on the other side of fear.",
+    "You are on a journey with no defined beginning, middle or end. There are no wrong twists or turns.",
+    "I am open and ready to receive what is meant for me.",
+    "I am more than capable. I am braver than I think.",
+    "NOTHING is too good or too big for you.",
+    "Do not settle for less than what is availible to you, jsut becasue you are too scared to go for it.",
+  ];
+  let affirmationContent = document.querySelector("#daily-affirmation-content");
+  affirmationContent.innerHTML = `${affirmation[currentDate.getDay()]}`;
+}
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -115,5 +126,4 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Brighton");
-
-/* displayAffirmation(); */
+displayAffirmation();
