@@ -36,7 +36,7 @@ ul:first-letter {
 
 .unit {
   position: relative;
-  font-size: 15px;
+  font-size: 20px;
   top: -32px;
   left: -13px;
 }
@@ -75,17 +75,4 @@ ul:first-letter {
 
 .daily-affirmation {
   padding-top: 15px;
-}
-
-
-
-#fahrenheit-link,
-#celsius-link {
-  text-decoration: none;
-  color: black;
-}
-#fahrenheit-link.active,
-#celsius-link.active {
-  cursor: default;
-  font-weight: bolder;
 }
