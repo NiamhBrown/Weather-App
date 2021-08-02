@@ -27,9 +27,22 @@ if (currentMinute < 10) {
 let time = document.querySelector("#time");
 time.innerHTML = `${currentHour}:${currentMinute}`;
 
-function displayForecast() {
+/* function displayAffirmation() {
+  let affirmationElement = document.querySelector("#daily-affirmation-content");
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  //if days= [1] innerHtml= blahblah ect OR creat a affirmation object array and if day[1] inner html = object[1]
+
+  let affirmations = [
+    {aff1},
+    {aff2},
+    {aff.3},
+  ];
+} */
+
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML = `<div class="row">`;
 
   days.forEach(function (day) {
@@ -52,9 +65,14 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
+function getForecast(coordinates) {
+  let units = "metric";
+  let apiKey = "e4c991b27b566dc4b5b311b6f8d9ac5c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#main-temp-value");
   let cityElement = document.querySelector("#city");
@@ -75,6 +93,8 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -118,4 +138,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Brighton");
-displayForecast();
+
+/* displayAffirmation(); */
