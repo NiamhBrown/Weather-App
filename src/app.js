@@ -37,13 +37,13 @@ function formatDay(timestamp) {
 
 function displayAffirmation() {
   let affirmation = [
-    "Just because it is not happening right now, does not mean it never will.",
+    "I have control over my life and get to choose how things play out.",
     "The best things in life are on the other side of fear.",
-    "You are on a journey with no defined beginning, middle or end. There are no wrong twists or turns.",
-    "I am open and ready to receive what is meant for me.",
-    "I am more than capable. I am braver than I think.",
-    "NOTHING is too good or too big for you.",
-    "Do not settle for less than what is availible to you, jsut becasue you are too scared to go for it.",
+    "You have the ability to create + become anything you desire.",
+    "Do not settle for mediocre. You are not mediocre.",
+    "I trust the process and the timing of my life.",
+    "Nothing is too good or too big for you.",
+    "Everyday I am attracting the right people, opportunities and resources to achieve my big goals.",
   ];
   let affirmationContent = document.querySelector("#daily-affirmation-content");
   affirmationContent.innerHTML = `${affirmation[currentDate.getDay()]}`;
