@@ -27,6 +27,14 @@ if (currentMinute < 10) {
 let time = document.querySelector("#time");
 time.innerHTML = `${currentHour}:${currentMinute}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 /* function displayAffirmation() {
   let affirmationElement = document.querySelector("#daily-affirmation-content");
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
@@ -37,30 +45,40 @@ time.innerHTML = `${currentHour}:${currentMinute}`;
     {aff2},
     {aff.3},
   ];
-} */
+} 
+!!! literall do qhat you did for the forecast day so days[day] but instead of days object, do a affirmation one:)*/
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-              <div class="weather-forecast-day">${day}</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+              <div class="weather-forecast-day">${formatDay(
+                forecastDay.dt
+              )}</div>
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
                 alt=""
                 width="42"
                 class="weather-forecast-icon"
               />
               <div class="weather-forecast-temperatures">
-                <span class="weather-foreacast-temperature-max"> 18° </span>
-                <span class="weather-foreacast-temperature-min"> 15° </span>
+                <span class="weather-foreacast-temperature-max"> ${Math.round(
+                  forecastDay.temp.max
+                )}° </span>
+                <span class="weather-foreacast-temperature-min"> ${Math.round(
+                  forecastDay.temp.min
+                )}° </span>
               </div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -70,7 +88,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let units = "metric";
   let apiKey = "e4c991b27b566dc4b5b311b6f8d9ac5c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
 function displayTemperature(response) {
@@ -79,18 +97,12 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let iconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = response.data.main.temp;
 
