@@ -38,8 +38,8 @@ function formatDay(timestamp) {
 function displayAffirmation() {
   let affirmation = [
     "I have control over my life and get to choose how things play out.",
-    "The best things in life are on the other side of fear.",
     "You have the ability to create + become anything you desire.",
+    "Everyday I make positive decisions that further align me with my goals.",
     "Do not settle for mediocre. You are not mediocre.",
     "I trust the process and the timing of my life.",
     "Nothing is too good or too big for you.",
