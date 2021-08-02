@@ -35,18 +35,8 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-/* function displayAffirmation() {
-  let affirmationElement = document.querySelector("#daily-affirmation-content");
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
-  //if days= [1] innerHtml= blahblah ect OR creat a affirmation object array and if day[1] inner html = object[1]
-
-  let affirmations = [
-    {aff1},
-    {aff2},
-    {aff.3},
-  ];
-} 
-!!! literall do qhat you did for the forecast day so days[day] but instead of days object, do a affirmation one:)*/
+ //function displayAffirmation() {
+  
 
 function displayForecast(response) {
   let forecast = response.data.daily;
