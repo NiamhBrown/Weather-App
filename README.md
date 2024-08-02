@@ -6,7 +6,7 @@
 
 - [About the Project](#about-the-project)
 - [Features](#features)
-- [Built With](#built-with)
+- [Built with](#built-with)
 
 ## About the Project
 
@@ -18,8 +18,9 @@ The Weather App is a simple yet functional application that provides real-time w
 - **Search Functionality**: Users can search for weather details by entering the city name.
 - **Temperature Display**: Shows current temperature in Celsius or Fahrenheit.
 - **Weather Icons**: Displays appropriate weather icons based on the current conditions.
+- **Daily affirmation**: Had to add a positive touch to the project! App displays a new affirmation for each day of the week.
 
-### Built With
+### Built with
 
 - **HTML5**: For structuring the content.
 - **CSS3**: For styling and layout.
